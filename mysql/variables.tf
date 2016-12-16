@@ -9,6 +9,10 @@ variable "application" {
 variable "detail" {
 
 }
+
+variable "aws_region" {
+
+}
 variable "db_instance_type" {
   default = "db.t2.micro"
 }
