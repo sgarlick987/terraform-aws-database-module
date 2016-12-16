@@ -9,3 +9,13 @@ resource "aws_security_group" "mysql_allow" {
     security_groups = ["${var.source_security_group_ids}"]
   }
 }
+
+resource "aws_security_group_rule" "source_security_group_egress" {
+  count = "${length(var.source_security_group_ids)}"
+  from_port = 3306
+  to_port = 3306
+  source_security_group_id = "${aws_security_group.mysql_allow.id}"
+  security_group_id = "${var.source_security_group_ids[count.index]}"
+  protocol = "tcp"
+  type = "egress"
+}
