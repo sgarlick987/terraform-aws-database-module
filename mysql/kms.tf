@@ -1,5 +1,5 @@
 resource "aws_kms_key" "mysql" {
-  description = "${var.application}-${var.environment}-${var.detail}"
+  description = "${var.application}-${var.environment}-${var.detail}-rds"
   deletion_window_in_days = 10
 }
 
