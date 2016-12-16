@@ -13,6 +13,8 @@ variable "detail" {
 variable "aws_region" {
 
 }
+
+variable "vpc_id" {}
 variable "db_instance_type" {
   default = "db.t2.micro"
 }
