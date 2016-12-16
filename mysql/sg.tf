@@ -11,7 +11,7 @@ resource "aws_security_group" "mysql_allow" {
 }
 
 resource "aws_security_group_rule" "source_security_group_egress" {
-  count = "${length(var.source_security_group_ids)}"
+  count = "${var.source_security_group_length}"
   from_port = 3306
   to_port = 3306
   source_security_group_id = "${aws_security_group.mysql_allow.id}"

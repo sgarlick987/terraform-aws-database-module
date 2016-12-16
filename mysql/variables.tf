@@ -36,6 +36,9 @@ variable "db_engine_version" {
 variable "source_security_group_ids" {
   type = "list"
 }
+variable "source_security_group_length" {
+  default = 1
+}
 variable "multi_az" {
   default = false
 }
