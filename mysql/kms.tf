@@ -4,6 +4,6 @@ resource "aws_kms_key" "mysql" {
 }
 
 resource "aws_kms_alias" "mysql" {
-  name = "alias/${var.application}-${var.environment}-${var.detail}"
+  name = "alias/${var.application}-${var.environment}-${var.detail}-rds"
   target_key_id = "${aws_kms_key.mysql.key_id}"
 }
