@@ -1,6 +1,7 @@
 resource "aws_db_parameter_group" "mysql" {
   name = "${var.application}-${var.environment}-${var.detail}"
   family = "mysql5.6"
+  apply_method = false
   parameter {
     name = "character_set_server"
     value = "utf8"

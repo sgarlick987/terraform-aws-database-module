@@ -1,5 +1,5 @@
 resource "aws_security_group" "mysql_allow" {
-  name = "allow_all"
+  name = "${var.application}-${var.environment}-${var.detail}-db"
   description = "Allow mysql traffic from source security groups"
   vpc_id = "${var.vpc_id}"
   ingress {
